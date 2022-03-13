@@ -1,5 +1,6 @@
 #include "EngineMinimal.h"
 #include "Engine/Core/EngineFactory.h"
+#include "Engine/Debug/Log/SimpleLog.h"
 
 //hInstance  自己的实例
 //prevInstance  上次启动的实例
@@ -20,18 +21,21 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance,PSTR cmdLine, int
         
         if (EngineReturnValue != 0)
         {
+            Engine_Log_Error("Engine Pre initialization error");
             return EngineReturnValue;
         }
         
         EngineInstance->Init();
         if (EngineReturnValue != 0)
         {
+            Engine_Log_Error("Engine  initialization error");
             return EngineReturnValue;
         }
         
         EngineInstance->PostInit();
         if (EngineReturnValue != 0)
         {
+            Engine_Log_Error("Engine Post  initialization error");
             return EngineReturnValue;
         }
         
@@ -43,23 +47,26 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance,PSTR cmdLine, int
         EngineInstance->PreExit();
         if (EngineReturnValue != 0)
         {
+            Engine_Log_Error("Engine Pre Exti error");
             return EngineReturnValue;
         }
         
         EngineInstance->Exit();
         if (EngineReturnValue != 0)
         {
+            Engine_Log_Error("Engine  Exit error");
             return EngineReturnValue;
         }
         
         EngineInstance->PostExit();
         if (EngineReturnValue != 0)
         {
+            Engine_Log_Error("Engine  Post Exit error");
             return EngineReturnValue;
         }
         
         return 0;
     }
-   
+    Engine_Log("Engine  Exit");
     return 1;
 }

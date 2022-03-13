@@ -13,6 +13,9 @@ public:
     int PreExit() override;
     int Exit() override;
     int PostExit() override;
+
+private:
+    bool InitWindows(const FWinMainCommandParameters InParameter);
 };
 
 #endif
