@@ -15,14 +15,14 @@ public:
 		float in_m22);
 
 	//行列式
-	float Determinant();
+	float Determinant() const;
 public:
 	void operator+=(const fmatrix_2x2& a)
 	{
 		*this = *this + a;
 	}
 
-	fmatrix_2x2 operator+(const fmatrix_2x2& a)
+	fmatrix_2x2 operator+(const fmatrix_2x2& a) const
 	{
 		return fmatrix_2x2(
 			m11 + a.m11,
@@ -36,13 +36,27 @@ public:
 		*this = *this - a;
 	}
 
-	fmatrix_2x2 operator-(const fmatrix_2x2& a)
+	fmatrix_2x2 operator-(const fmatrix_2x2& a) const
 	{
 		return fmatrix_2x2(
 			m11 - a.m11,
 			m12 - a.m12,
 			m21 - a.m21,
 			m22 - a.m22);
+	}
+
+	void operator*=(const int& a)
+	{
+		*this = *this * a;
+	}
+
+	fmatrix_2x2 operator*(const int& a)
+	{
+		return fmatrix_2x2(
+			m11 * a,
+			m12 * a,
+			m21 * a,
+			m22 * a);
 	}
 
 	void operator*=(const float& a)
@@ -64,13 +78,11 @@ public:
 		*this = *this * a;
 	}
 
-	fmatrix_2x2 operator*(const fmatrix_2x2& a)
+	fmatrix_2x2 operator*(const fmatrix_2x2& a)const
 	{
 		return fmatrix_2x2(
-			m11 * a.m11 + m12 * a.m21,
-			m11 * a.m12 + m12 * a.m22,
-			m21 * a.m11 + m22 * a.m21,
-			m21 * a.m12 + m22 * a.m22);
+			m11 * a.m11 + m12 * a.m21, m11 * a.m12 + m12 * a.m22,	
+			m21 * a.m11 + m22 * a.m21, m21 * a.m12 + m22 * a.m22);
 	}
 public:
 	//单位化

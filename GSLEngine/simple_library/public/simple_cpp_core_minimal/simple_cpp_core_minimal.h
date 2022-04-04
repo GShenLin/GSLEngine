@@ -9,6 +9,7 @@
 #include <future>
 #include <map>
 #include <vector>
+#include <xstring>
 #include <list>
 #include <chrono>
 #include <unordered_map>

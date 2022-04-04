@@ -2,16 +2,16 @@
 #pragma once
 #include "../simple_core_minimal/simple_c_core/simple_core_minimal.h"
 
-enum class ESimpleSokcetType :unsigned char
+enum class ESimpleSocketType :unsigned char
 {
-	SOKCETTYPE_UDP,
-	SOKCETTYPE_TCP,
+	SOCKETTYPE_UDP,
+	SOCKETTYPE_TCP,
 }; 
 
 enum class ESimpleDriveType :unsigned char
 {
 	DRIVETYPE_LISTEN,//·þÎñÆ÷
-	DRIVETYPE_CONNETION,
+	DRIVETYPE_CONNECTION,
 };
 
 enum class ESimpleConnetionState :unsigned char

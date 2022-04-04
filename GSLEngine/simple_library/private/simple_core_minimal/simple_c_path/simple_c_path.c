@@ -56,3 +56,20 @@ void normalization_directory(char *buf, const char *path_buf)
 
 	destroy_string(&c_string);
 }
+
+void get_path_clean_filename_w(wchar_t* buf, const wchar_t* path_buf)
+{
+	simple_c_wstring c_string;
+	if (wcsstr(path_buf, L"\\"))
+	{
+		dismantling_wstring(path_buf, L"\\", &c_string);
+	}
+	else if (wcsstr(path_buf, L"/"))
+	{
+		dismantling_wstring(path_buf, L"/", &c_string);
+	}
+
+	wchar_t* value = get_wstring(c_string.size - 1, &c_string);
+	wcscpy(buf, value);
+	destroy_wstring(&c_string);
+}

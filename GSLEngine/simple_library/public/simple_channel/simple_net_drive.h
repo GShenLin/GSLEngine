@@ -10,7 +10,7 @@ class FSimpleNetDrive
 public:
 	FSimpleNetDrive();
 
-	static FSimpleNetDrive* GetNetDrive(ESimpleSokcetType InSokcetType, ESimpleDriveType InDriveType);
+	static FSimpleNetDrive* GetNetDrive(ESimpleSocketType InSokcetType, ESimpleDriveType InDriveType);
 
 	virtual bool Init();
 
