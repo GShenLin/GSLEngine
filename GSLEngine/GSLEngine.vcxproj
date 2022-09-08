@@ -155,6 +155,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Engine\Config\EngineRenderConfig.cpp" />
     <ClCompile Include="Engine\Core\Engine.cpp">
       <RuntimeLibrary>MultiThreadedDebugDll</RuntimeLibrary>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -231,6 +232,7 @@
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
     <ClCompile Include="Engine\Core\WinMainCommandParameters.cpp" />
+    <ClCompile Include="Engine\Debug\EngineDebug.cpp" />
     <ClCompile Include="Engine\GSLEngine.cpp">
       <RuntimeLibrary>MultiThreadedDebugDll</RuntimeLibrary>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -338,9 +340,11 @@
     <ClCompile Include="simple_library\private\simple_math\transformation\vector\vector_4d.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Engine\Config\EngineRenderConfig.h" />
     <ClInclude Include="Engine\Core\WinMainCommandParameters.h" />
     <ClInclude Include="Engine\Core\Engine.h" />
     <ClInclude Include="Engine\Core\EngineFactory.h" />
+    <ClInclude Include="Engine\Debug\EngineDebug.h" />
     <ClInclude Include="Engine\Debug\Log\SimpleLog.h" />
     <ClInclude Include="Engine\EngineMinimal.h" />
     <ClInclude Include="Engine\Platform\Windows\WindowsEngine.h" />
