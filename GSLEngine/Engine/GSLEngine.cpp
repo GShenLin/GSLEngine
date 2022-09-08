@@ -1,6 +1,6 @@
 #include "EngineMinimal.h"
-#include "Engine/Core/EngineFactory.h"
-#include "Engine/Debug/Log/SimpleLog.h"
+#include "Core/EngineFactory.h"
+#include "Debug/Log/SimpleLog.h"
 
 //hInstance  自己的实例
 //prevInstance  上次启动的实例

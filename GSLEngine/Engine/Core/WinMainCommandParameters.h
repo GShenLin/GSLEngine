@@ -1,5 +1,5 @@
 #pragma once
-#include "../../EngineMinimal.h"
+#include "../EngineMinimal.h"
 #if 1
 
 class FWinMainCommandParameters
