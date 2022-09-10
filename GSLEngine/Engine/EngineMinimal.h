@@ -1,18 +1,22 @@
 #pragma once
+
 #include "../simple_library/public/simple_library.h"
 #include "Debug/Log/SimpleLog.h"
 
-#pragma commet(lib , "d3dcompiler.lib")
-#pragma commet(lib , "D3D12.lib")
-#pragma commet(lib , "dxgi.lib")
+#include <vector>
 
-#include <wrl.h> // Windows提供的库 智能指针 事件之类的
-#include <dxgi1_4.h>   // 东西很多 主要有很多工厂 生成适配器之类的
-#include <d3d12.h> //  D3D12 API
-#include <D3Dcompiler.h>
-#include <DirectXMath.h> // 数学库
-#include <DirectXPackedVector.h> // 向量的库
-#include <DirectXColors.h>  // 颜色相关库
+#pragma comment(lib, "d3dcompiler.lib")
+#pragma comment(lib, "D3D12.lib")
+#pragma comment(lib, "dxgi.lib")
+
+#include <wrl.h>//
+#include <dxgi1_4.h>//
+#include "Rendering/DirectX12/d3dx12.h"//
+#include <D3Dcompiler.h>//
+#include <DirectXMath.h>
+#include <DirectXPackedVector.h>
+#include <DirectXColors.h>
 #include <DirectXCollision.h>
 
 using namespace Microsoft::WRL;
+using namespace std;
