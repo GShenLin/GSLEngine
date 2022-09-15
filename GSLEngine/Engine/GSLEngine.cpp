@@ -86,7 +86,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance,PSTR cmdLine, int
 	if (FEngine* Engine = FEngineFactory::CreateEngine())
 	{
 		//初始化
-		Init(Engine, hInstance, prevInstance, cmdLine, showCmd);
+		Init(Engine, hInstance, prevInstance, cmdLine, SW_SHOWMAXIMIZED );
 
 		MSG EngineMsg = { 0 };
 

@@ -163,9 +163,9 @@ void FWindowsEngine::Tick(float DeltaTime)
 	GraphicsCommandList->RSSetViewports(1,&ViewprotInfo);
 	GraphicsCommandList->RSSetScissorRects(1, &ViewprotRect);
 
-	//清除画布
+	//清除画布 期望的顏色
 	GraphicsCommandList->ClearRenderTargetView(GetCurrentSwapBufferView(),
-		DirectX::Colors::Red,
+		DirectX::Colors::Navy,
 		0,nullptr);
 
 	//清除深度模板缓冲区
@@ -242,7 +242,7 @@ void FWindowsEngine::WaitGPUCommandQueueComplete()
 {
 	CurrentFenceIndex++;
 
-	//向GUP设置新的隔离点 等待GPU处理玩信号
+	//向GPU设置新的隔离点 等待GPU处理完信号
 	ANALYSIS_HRESULT(CommandQueue->Signal(Fence.Get(), CurrentFenceIndex));
 
 	if (Fence->GetCompletedValue() < CurrentFenceIndex)
@@ -317,7 +317,17 @@ bool FWindowsEngine::InitWindows(FWinMainCommandParameters InParameters)
 	}
 
 	//显示窗口
-	ShowWindow(MianWindowsHandle, SW_SHOW);
+// 	SW_HIDE 隐藏窗口，活动状态给令一个窗口
+// SW_MINIMIZE 最小化窗口，活动状态给令一个窗口
+// SW_RESTORE 用原来的大小和位置显示一个窗口，同时令其进入活动状态
+// SW_SHOW 用当前的大小和位置显示一个窗口，同时令其进入活动状态
+// SW_SHOWMAXIMIZED 最大化窗口，并将其激活
+// SW_SHOWMINIMIZED 最小化窗口，并将其激活
+// SW_SHOWMINNOACTIVE 最小化一个窗口，同时不改变活动窗口
+// SW_SHOWNA 用当前的大小和位置显示一个窗口，不改变活动窗口
+// SW_SHOWNOACTIVATE 用最近的大小和位置显示一个窗口，同时不改变活动窗口
+// SW_SHOWNORMAL 与SW_RESTORE相同
+	ShowWindow(MianWindowsHandle, SW_MAXIMIZE);
 
 	//窗口是脏的，刷新一下
 	UpdateWindow(MianWindowsHandle);
